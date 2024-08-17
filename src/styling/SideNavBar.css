@@ -1,0 +1,35 @@
+.list-group {
+    width: var(--leftmargin);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--main);
+    border-right: 3px solid var(--secondary);
+}
+
+.list-group a {
+    padding: 10px 15px;
+    font-size: 18px;
+    display: block;
+    background-color: var(--secondary);
+    color: white;
+}
+
+.list-group .logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.list-group .logo:hover {
+    filter: drop-shadow(0 0 10px var(--secondary));
+}
+
+.list-group a:hover {
+    background-color: var(--tertiary);
+    color: white;
+}
+

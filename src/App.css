@@ -1,0 +1,20 @@
+:root {
+    --main: #191A19;
+    --secondary: #1E5128;
+    --tertiary: #4E9F3D;
+    --highlight: #ac3232;
+
+    --leftmargin: 250px;
+    background-color: var(--main);
+}
+
+.App {
+    display: flex;
+}
+
+.main-content {
+    margin-left: var(--leftmargin);
+    /* padding: 20px; */
+    width: 100%;
+    background-color: var(--main);
+}
