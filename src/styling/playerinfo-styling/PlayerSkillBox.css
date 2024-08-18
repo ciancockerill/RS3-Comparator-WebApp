@@ -1,0 +1,34 @@
+.skillBox {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    gap: 10px; /* Space between flex items */
+    margin-top: 30px;
+    margin-left: 30%;
+    margin-right: 30%;
+    background-color: var(--main);
+}
+
+.skillItem {
+    flex: 1 1 90px;
+    max-width: 90px;
+    height: 50px;
+    display: flex;
+    border-style: solid;
+    border-color: var(--tertiary);
+    padding: 10px;
+    background-color: var(--secondary);
+    text-align: center;
+}
+
+/* The skill icon */
+.skillImage {
+    width: 25px;
+    margin-right: 10px;
+}
+
+/* Skill information text */
+.skillInfo {
+    font-size: 110%;
+    color: white;
+    font-weight: bold;
+}

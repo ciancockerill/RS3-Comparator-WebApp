@@ -1,3 +1,5 @@
+import "../../styling/playerinfo-styling/PlayerSkillBox.css";
+
 interface SkillData {
     skills: {
         [key: string]: {
@@ -9,15 +11,19 @@ interface SkillData {
 }
 
 function PlayerSkillBox({skills} : SkillData) {
+
     return (
-        <div>
-            <h3>Skills:</h3>
-    {Object.entries(playerData.skills).map(([skillName, skillData]) => (
-        <div key={skillName}>
-            <p>{skillName} - Level: {skillData.level}, XP: {skillData.xp}</p>
-    </div>
-    ))}
-    </div>
+        <div className="skillBox">
+            {Object.entries(skills).map(([skillName, skillData]) => (
+                <div key={skillName} className="skillItem">
+                    <img src={"https://runescape.wiki/images/" + skillName + ".png"}
+                         alt={skillName}
+                         className="skillImage"
+                    />
+                    <p className="skillInfo">{skillData.level}</p>
+                </div>
+            ))}
+        </div>
     );
 }
 

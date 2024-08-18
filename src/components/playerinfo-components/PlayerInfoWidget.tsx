@@ -18,29 +18,42 @@ interface PlayerData {
     };
 }
 
-function PlayerInfoWidget() {
+interface PlayerName {
+    name: string;
+}
+
+function PlayerInfoWidget({name} : PlayerName): React.ReactElement {
     const [playerData, setPlayerData] = useState<PlayerData | null>(null);
     const [loading, setLoading] = useState(true); // Add loading state
 
     useEffect(() => {
-        fetch('http://rs3comparator-backend-env.eba-icixngap.eu-west-1.elasticbeanstalk.com/rs3player?user=possyeggs')
+        setLoading(true)
+        fetch('http://rs3comparator-backend-env.eba-icixngap.eu-west-1.elasticbeanstalk.com/rs3player?user=' + name)
             .then(response => response.json())
             .then(json => {
-                setPlayerData(json);
+                if (json.status !== "error") {
+                    setPlayerData(json);
+                }
                 setLoading(false); // Set loading to false after data is fetched
             })
             .catch(error => {
                 console.error(error);
                 setLoading(false); // Set loading to false even if there's an error
             });
-    }, []);
+    }, [name]);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return (
+            <div className="d-flex justify-content-center">
+                <div className="spinner-border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        )
     }
 
     if (!playerData) {
-        return <div>Error loading player data</div>;
+        return <div className="errorDiv">Error loading player data</div>;
     }
 
     return (

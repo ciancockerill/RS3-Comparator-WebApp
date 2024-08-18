@@ -1,0 +1,19 @@
+.PlayerInformationBox {
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+    color: var(--secondary);
+}
+
+.name {
+    font-size: 200%;
+    font-weight: bold;
+}
+
+.PlayerInformationBox p {
+}
+
+.PlayerInformationBox p:not(.name) {
+    color: var(--tertiary);
+    line-height: 10px;
+}

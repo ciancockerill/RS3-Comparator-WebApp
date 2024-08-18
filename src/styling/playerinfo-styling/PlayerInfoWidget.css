@@ -1,0 +1,19 @@
+.spinner-border {
+    color: var(--secondary);
+    text-align: center;
+}
+
+.mb-3 {
+    margin-left: 20%;
+}
+
+.btn {
+    margin-right: 40%;
+}
+
+.errorDiv {
+    text-align: center;
+    color: var(--secondary);
+    font-weight: bold;
+    font-size: 50px;
+}
