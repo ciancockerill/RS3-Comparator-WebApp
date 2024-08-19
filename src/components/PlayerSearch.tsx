@@ -1,18 +1,24 @@
 import TitleBar from "./TitleBar.tsx";
 import PlayerInfoWidget from "./playerinfo-components/PlayerInfoWidget.tsx";
 import "../styling/PlayerComparison.css"
-import {useState} from "react";
+import {SetStateAction, useState} from "react";
 
 function PlayerSearch() {
     const [playerName, setPlayerName] = useState("");
     const [inputFieldText, setInputFieldText] = useState("");
 
-    const handleButtonSubmit = (event) => {
+    const handleButtonSubmit = () => {
         setPlayerName(inputFieldText);
     }
 
-    const handleInputChange = (event) => {
+    const handleInputChange = (event: { target: { value: SetStateAction<string>; }; }) => {
         setInputFieldText(event.target.value);
+    }
+
+    const handleEnterKey = (event: { key: string; }) => {
+        if (event.key === "Enter") {
+            handleButtonSubmit()
+        }
     }
 
     return (
@@ -25,6 +31,7 @@ function PlayerSearch() {
                        aria-label="Runescape 3 Username"
                        aria-describedby="button-addon2"
                        onChange={handleInputChange}
+                       onKeyDown={handleEnterKey}
                 />
                 <button className="btn btn-outline-secondary"
                         type="button"
