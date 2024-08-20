@@ -3,7 +3,7 @@
     flex-wrap: wrap; /* Allows items to wrap to the next line */
     gap: 10px; /* Space between flex items */
     margin-top: 30px;
-    margin-left: 30%;
+    margin-left: 35%;
     margin-right: 30%;
     background-color: var(--main);
 }
@@ -20,13 +20,11 @@
     text-align: center;
 }
 
-/* The skill icon */
 .skillImage {
     width: 25px;
     margin-right: 10px;
 }
 
-/* Skill information text */
 .skillInfo {
     font-size: 110%;
     color: white;
@@ -36,9 +34,10 @@
 .hoverInfo {
     position: absolute;
     top: 40%;
-    left: 85%;
+    left: 75%;
     transform: translateX(-50%);
     background-color: var(--secondary);
+    border: var(--tertiary) 1px solid;
     color: white;
     padding: 20px;
     border-radius: 5px;

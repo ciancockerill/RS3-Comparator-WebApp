@@ -6,14 +6,17 @@
 }
 
 .name {
-    font-size: 200%;
+    font-size: 300%;
     font-weight: bold;
 }
 
-.PlayerInformationBox p {
+.PlayerInformationBox p:not(.name) {
+    font-size: 150%;
+    color: white;
+    line-height: 10px;
 }
 
-.PlayerInformationBox p:not(.name) {
+.label {
     color: var(--tertiary);
-    line-height: 10px;
+    font-weight: bold;
 }

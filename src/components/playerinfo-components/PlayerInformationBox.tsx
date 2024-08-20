@@ -12,9 +12,18 @@ function PlayerInformationBox({name, totalskill, totalxp, completedquests}: Play
     return (
         <div className="PlayerInformationBox">
             <p className="name">{name}</p>
-            <p className="total-skill">Total Skill: {totalskill}</p>
-            <p className="total-xp">Total XP: {totalxp}</p>
-            <p className="completed-quests">Completed Quests: {completedquests}</p>
+            <p className="total-skill">
+                <span className="label">Total Skill</span>
+                <span>{" "}{totalskill}</span>
+            </p>
+            <p className="total-xp">
+                <span className="label">Total XP</span>
+                <span>{" "}{totalxp}</span>
+            </p>
+            <p className="completed-quests">
+                <span className="label">Completed Quests</span>
+                <span>{" "}{completedquests}</span>
+            </p>
         </div>
     );
 }
