@@ -3,8 +3,8 @@
     flex-wrap: wrap; /* Allows items to wrap to the next line */
     gap: 10px; /* Space between flex items */
     margin-top: 30px;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: 35%;
+    margin-right: 35%;
     background-color: var(--main);
     justify-content: center
 }
