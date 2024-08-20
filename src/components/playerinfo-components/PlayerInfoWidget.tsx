@@ -28,7 +28,7 @@ function PlayerInfoWidget({name} : PlayerName): React.ReactElement {
     }
 
     return (
-        <>
+        <div className="playerInformationBoxContainer">
             <PlayerInformationBox
                 name={playerData.name}
                 completedquests={playerData.completedquests}
@@ -37,7 +37,7 @@ function PlayerInfoWidget({name} : PlayerName): React.ReactElement {
             />
 
             <PlayerSkillBox skills={playerData.skills}/>
-        </>
+        </div>
     );
 }
 

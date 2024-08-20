@@ -1,0 +1,42 @@
+.searchBoxContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns for the search boxes */
+    gap: 20px; /* Space between the search boxes */
+    width: 100%;
+    max-width: 1200px; /* Max width to center content on large screens */
+    margin: 0 auto 20px; /* Center the container horizontally and add margin at the bottom */
+}
+
+.searchBoxContainer > * {
+    width: 100%;
+}
+
+.playerWidgetContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns for the widgets */
+    gap: 10px; /* Space between the widgets */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+.playerWidgetContainer > * > .playerInformationBoxContainer > .skillBox {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.playerWidgetContainer > * > .playerInformationBoxContainer > .skillBox > * > .hoverInfo {
+    position: absolute;
+}
+
+.left > .playerInformationBoxContainer > .skillBox > * > .hoverInfo {
+    left: 20%;
+}
+
+.right > .playerInformationBoxContainer > .skillBox > * > .hoverInfo {
+    left: 92%;
+}
+
+
+
+

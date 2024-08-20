@@ -3,14 +3,15 @@
     flex-wrap: wrap; /* Allows items to wrap to the next line */
     gap: 10px; /* Space between flex items */
     margin-top: 30px;
-    margin-left: 35%;
+    margin-left: 30%;
     margin-right: 30%;
     background-color: var(--main);
+    justify-content: center
 }
 
 .skillItem {
-    flex: 1 1 90px;
-    max-width: 90px;
+    flex: 1 1 100px;
+    max-width: 100px;
     height: 50px;
     display: flex;
     border-style: solid;
