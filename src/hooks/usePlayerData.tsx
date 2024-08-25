@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 
-interface PlayerData {
+export interface PlayerData {
     completedquests: number;
     name: string;
     totalskill: number;

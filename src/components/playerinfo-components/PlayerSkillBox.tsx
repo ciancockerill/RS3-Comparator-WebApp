@@ -1,16 +1,14 @@
 import "../../styling/playerinfo-styling/PlayerSkillBox.css";
 import {useState} from "react";
+import {PlayerData} from "../../hooks/usePlayerData.tsx";
+import {SkillComparisonData} from "./PlayerComparisonHandler.tsx";
 
-interface SkillData {
-    skills: {
-        [key: string]: {
-            level: number;
-            xp: number;
-        }
-    };
+interface SkillBoxProps {
+    skills: PlayerData["skills"]
+    comparisonData?: SkillComparisonData
 }
 
-function PlayerSkillBox({skills} : SkillData) {
+function PlayerSkillBox({skills} : SkillBoxProps) {
     const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
 
     const handleMouseEnter = (skillName: string) => {

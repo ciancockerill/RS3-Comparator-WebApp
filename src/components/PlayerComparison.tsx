@@ -1,7 +1,7 @@
 import TitleBar from "./TitleBar.tsx";
-import PlayerInfoWidget from "./playerinfo-components/PlayerInfoWidget.tsx";
 import "../styling/PlayerComparison.css";
 import {SetStateAction, useState} from "react";
+import PlayerComparisonHandler from "./playerinfo-components/PlayerComparisonHandler.tsx";
 
 function PlayerSearch() {
     // State variables for Player 1
@@ -80,15 +80,7 @@ function PlayerSearch() {
                 </div>
             </div>
 
-            <div className="playerWidgetContainer">
-                <div className="left">
-                    {playerName1 && <PlayerInfoWidget name={playerName1}/>}
-                </div>
-
-                <div className="right">
-                    {playerName2 && <PlayerInfoWidget name={playerName2}/>}
-                </div>
-            </div>
+            {playerName1 && playerName2 && <PlayerComparisonHandler playerName1={playerName1} playerName2={playerName2}/>}
         </>
     );
 }

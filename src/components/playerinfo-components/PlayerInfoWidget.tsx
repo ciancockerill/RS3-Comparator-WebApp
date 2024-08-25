@@ -1,16 +1,29 @@
 import "../../styling/playerinfo-styling/PlayerInfoWidget.css";
 import PlayerInformationBox from "./PlayerInformationBox.tsx";
 import PlayerSkillBox from "./PlayerSkillBox.tsx";
-import usePlayerData from "../../hooks/usePlayerData.tsx";
+import {SkillComparisonData} from "./PlayerComparisonHandler.tsx";
 
-interface PlayerName {
+interface PlayerData {
+    completedquests: number;
     name: string;
+    totalskill: number;
+    totalxp: number;
+    skills: {
+        [key: string]: {
+            level: number;
+            xp: number;
+        };
+    };
 }
 
-function PlayerInfoWidget({name} : PlayerName): React.ReactElement {
+interface PlayerInfoWidgetProps {
+    playerData: PlayerData | null;
+    loading: boolean;
+    error: boolean;
+    comparisonData?: SkillComparisonData
+}
 
-    const { playerData, loading, error } = usePlayerData(name);
-
+function PlayerInfoWidget({playerData, loading, error }: PlayerInfoWidgetProps): React.ReactElement {
     if (loading) {
         return (
             <div className="d-flex justify-content-center">

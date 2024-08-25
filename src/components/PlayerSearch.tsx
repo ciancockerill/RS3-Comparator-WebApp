@@ -2,6 +2,7 @@ import TitleBar from "./TitleBar.tsx";
 import PlayerInfoWidget from "./playerinfo-components/PlayerInfoWidget.tsx";
 import "../styling/PlayerComparison.css"
 import {SetStateAction, useState} from "react";
+import usePlayerData from "../hooks/usePlayerData.tsx";
 
 function PlayerSearch() {
     const [playerName, setPlayerName] = useState("");
@@ -20,6 +21,8 @@ function PlayerSearch() {
             handleButtonSubmit()
         }
     }
+
+    const {playerData : playerData, loading: loading, error : error} = usePlayerData(playerName)
 
     return (
         <>
@@ -41,7 +44,11 @@ function PlayerSearch() {
                 </button>
             </div>
 
-            {playerName && <PlayerInfoWidget name={playerName}/>}
+            {playerName && <PlayerInfoWidget
+                playerData={playerData}
+                loading={loading}
+                error={error}
+            />}
         </>
     );
 }

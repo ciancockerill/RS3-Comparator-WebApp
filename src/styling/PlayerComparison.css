@@ -13,11 +13,11 @@
 
 .playerWidgetContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns for the widgets */
-    gap: 10px; /* Space between the widgets */
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto; /* Center the container horizontally */
+    margin: 0 auto;
 }
 
 .playerWidgetContainer > * > .playerInformationBoxContainer > .skillBox {
