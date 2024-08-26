@@ -34,7 +34,7 @@ function PlayerInfoWidget({playerData, loading, error, comparisonData }: PlayerI
         )
     }
 
-    if (error || playerData === null) {
+    if (error || playerData == null) {
         return <div className="errorDiv">
             Error loading player data
         </div>;

@@ -21,6 +21,10 @@ function usePlayerData(name: string) {
     const [error, setError] = useState<boolean>(false);
 
     useEffect(() => {
+        if (name == "") {
+            return
+        }
+
         setLoading(true);
         setError(false);
 
@@ -33,12 +37,12 @@ function usePlayerData(name: string) {
                     setPlayerData(null)
                     setError(true)
                 }
-                setLoading(false); // Set loading to false after data is fetched
+                setLoading(false);
             })
             .catch(error => {
                 console.error(error);
-                setError(true)
                 setLoading(false); // Set loading to false even if there's an error
+                setError(true)
             });
     }, [name]);
 

@@ -80,7 +80,12 @@ function PlayerSearch() {
                 </div>
             </div>
 
-            {playerName1 && playerName2 && <PlayerComparisonHandler playerName1={playerName1} playerName2={playerName2}/>}
+            {(playerName1 || playerName2) &&
+                <PlayerComparisonHandler
+                    playerName1={playerName1}
+                    playerName2={playerName2}
+                />
+            }
         </>
     );
 }

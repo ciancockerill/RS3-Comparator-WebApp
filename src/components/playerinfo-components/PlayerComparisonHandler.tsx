@@ -51,7 +51,6 @@ function PlayerComparisonHandler({ playerName1, playerName2 }: PlayerComparisonH
     const [player1ComparisonData, setPlayer1ComparisonData] = useState<SkillComparisonData>();
     const [player2ComparisonData, setPlayer2ComparisonData] = useState<SkillComparisonData>();
 
-
     const {
         playerData: playerData1,
         loading: loading1,
@@ -76,7 +75,7 @@ function PlayerComparisonHandler({ playerName1, playerName2 }: PlayerComparisonH
     return (
         <div className="playerWidgetContainer">
             <div className="left">
-                {playerData1 && <PlayerInfoWidget
+                {(playerName1) && <PlayerInfoWidget
                     playerData={playerData1}
                     loading={loading1}
                     error={error1}
@@ -85,7 +84,7 @@ function PlayerComparisonHandler({ playerName1, playerName2 }: PlayerComparisonH
             </div>
 
             <div className="right">
-                {playerData2 && <PlayerInfoWidget
+                {(playerName2) && <PlayerInfoWidget
                     playerData={playerData2}
                     loading={loading2}
                     error={error2}
