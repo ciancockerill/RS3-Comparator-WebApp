@@ -4,6 +4,13 @@
     --tertiary: #4E9F3D;
     --highlight: #ac3232;
 
+    --greater: #006e00;
+    --greaterBorder: #203c0e;
+    --lesser: #9e2b2b;
+    --lesserBorder: #5e1b1b;
+    --equal: #535353;
+    --equalBorder: #3e3e3e;
+
     --leftmargin: 250px;
     background-color: var(--main);
 }

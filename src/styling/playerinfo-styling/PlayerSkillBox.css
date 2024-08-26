@@ -57,13 +57,16 @@
 }
 
 .lesser {
-    background-color: red;
+    background-color: var(--lesser);
+    border-color: var(--lesserBorder);
 }
 
 .equal {
-    background-color: grey;
+    background-color: var(--equal);
+    border-color: var(--equalBorder);
 }
 
 .greater {
-    background-color: green;
+    background-color: var(--greater);
+    border-color: var(--greaterBorder);
 }
