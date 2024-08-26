@@ -76,7 +76,7 @@ function PlayerComparisonHandler({ playerName1, playerName2 }: PlayerComparisonH
     return (
         <div className="playerWidgetContainer">
             <div className="left">
-                {playerName1 && <PlayerInfoWidget
+                {playerData1 && <PlayerInfoWidget
                     playerData={playerData1}
                     loading={loading1}
                     error={error1}
@@ -85,7 +85,7 @@ function PlayerComparisonHandler({ playerName1, playerName2 }: PlayerComparisonH
             </div>
 
             <div className="right">
-                {playerName2 && <PlayerInfoWidget
+                {playerData2 && <PlayerInfoWidget
                     playerData={playerData2}
                     loading={loading2}
                     error={error2}

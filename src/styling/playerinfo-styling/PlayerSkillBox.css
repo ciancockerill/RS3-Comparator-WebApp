@@ -55,3 +55,15 @@
 .skillImageHover {
     width: 70px;
 }
+
+.lesser {
+    background-color: red;
+}
+
+.equal {
+    background-color: grey;
+}
+
+.greater {
+    background-color: green;
+}

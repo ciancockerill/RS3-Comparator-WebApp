@@ -23,7 +23,7 @@ interface PlayerInfoWidgetProps {
     comparisonData?: SkillComparisonData
 }
 
-function PlayerInfoWidget({playerData, loading, error }: PlayerInfoWidgetProps): React.ReactElement {
+function PlayerInfoWidget({playerData, loading, error, comparisonData }: PlayerInfoWidgetProps): React.ReactElement {
     if (loading) {
         return (
             <div className="d-flex justify-content-center">
@@ -49,7 +49,10 @@ function PlayerInfoWidget({playerData, loading, error }: PlayerInfoWidgetProps):
                 totalxp={playerData.totalxp}
             />
 
-            <PlayerSkillBox skills={playerData.skills}/>
+            <PlayerSkillBox
+                skills={playerData.skills}
+                comparisonData={comparisonData}
+            />
         </div>
     );
 }
