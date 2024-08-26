@@ -22,7 +22,7 @@ function usePlayerData(name: string) {
 
     useEffect(() => {
         if (name == "") {
-            return
+            return;
         }
 
         setLoading(true);
