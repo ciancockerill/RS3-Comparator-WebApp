@@ -11,7 +11,7 @@ function HomePage() {
                 <p>
                     Discover your RuneScape 3 stats with ease. Whether you're playing solo or want to compare your
                     progress with a friend,
-                    our tool provides quick and simple access to all the metrics you care about. Just enter a username
+                    my tool provides quick and simple access to all the metrics you care about. Just enter a username
                     to start, or use the
                     URL parameters to save and share your searches.
                 </p>
