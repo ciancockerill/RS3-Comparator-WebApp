@@ -12,7 +12,7 @@
     border-right: 3px solid var(--secondary);
 }
 
-.list-group a {
+.list-group a:not(.head-img) {
     padding: 10px 15px;
     font-size: 18px;
     display: block;
@@ -29,7 +29,7 @@
     filter: drop-shadow(0 0 10px var(--secondary));
 }
 
-.list-group a:hover {
+.list-group a:hover:not(.head-img) {
     background-color: var(--tertiary);
     color: white;
 }
