@@ -1,12 +1,14 @@
 import TitleBar from "./TitleBar.tsx";
 import PlayerInfoWidget from "./playerinfo-components/PlayerInfoWidget.tsx";
 import "../styling/PlayerComparison.css"
-import {SetStateAction, useState} from "react";
+import {SetStateAction, useEffect, useState} from "react";
 import usePlayerData from "../hooks/usePlayerData.tsx";
+import { useParams } from 'react-router-dom';
 
 function PlayerSearch() {
     const [playerName, setPlayerName] = useState("");
     const [inputFieldText, setInputFieldText] = useState("");
+    const searchValue = useParams()['playerName'];
 
     const handleButtonSubmit = () => {
         setPlayerName(inputFieldText);
@@ -21,6 +23,12 @@ function PlayerSearch() {
             handleButtonSubmit()
         }
     }
+
+    useEffect(() => {
+        if (searchValue) {
+            setPlayerName(searchValue)
+        }
+    }, [searchValue]);
 
     const {playerData : playerData, loading: loading, error : error} = usePlayerData(playerName)
 

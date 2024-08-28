@@ -13,8 +13,8 @@ function App() {
                 <div className="main-content">
                     <Routes>
                         <Route path="/" element={<HomePage />} />
-                        <Route path="/playersearch" element={<PlayerSearch />} />
-                        <Route path="/playercomparison" element={<PlayerComparison />} />
+                        <Route path="/playersearch/:playerName?" element={<PlayerSearch />} />
+                        <Route path="/playercomparison/:playerNameOne?/:playerNameTwo?" element={<PlayerComparison />} />
                     </Routes>
                 </div>
             </div>

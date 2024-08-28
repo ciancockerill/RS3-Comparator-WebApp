@@ -1,7 +1,8 @@
 import TitleBar from "./TitleBar.tsx";
 import "../styling/PlayerComparison.css";
-import {SetStateAction, useState} from "react";
+import {SetStateAction, useEffect, useState} from "react";
 import PlayerComparisonHandler from "./playerinfo-components/PlayerComparisonHandler.tsx";
+import {useParams} from "react-router-dom";
 
 function PlayerSearch() {
     // State variables for Player 1
@@ -41,6 +42,19 @@ function PlayerSearch() {
             handleButtonSubmit2();
         }
     };
+
+    const urlParam = useParams()
+    const urlPlayerName1 = urlParam['playerNameOne'];
+    const urlPlayerName2 = urlParam['playerNameTwo'];
+
+    useEffect(() => {
+        if (urlPlayerName1) {
+            setPlayerName1(urlPlayerName1)
+        }
+        if (urlPlayerName2) {
+            setPlayerName2(urlPlayerName2)
+        }
+    }, [urlPlayerName1, urlPlayerName2]);
 
     return (
         <>
