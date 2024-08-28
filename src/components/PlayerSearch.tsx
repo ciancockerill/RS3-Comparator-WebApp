@@ -1,9 +1,9 @@
 import TitleBar from "./TitleBar.tsx";
 import PlayerInfoWidget from "./playerinfo-components/PlayerInfoWidget.tsx";
-import "../styling/PlayerComparison.css"
 import {SetStateAction, useEffect, useState} from "react";
 import usePlayerData from "../hooks/usePlayerData.tsx";
 import { useParams } from 'react-router-dom';
+import ReadOnlyUrlBox from "./ReadOnlyUrlBox.tsx";
 
 function PlayerSearch() {
     const [playerName, setPlayerName] = useState("");
@@ -57,6 +57,8 @@ function PlayerSearch() {
                 loading={loading}
                 error={error}
             />}
+
+            {!loading && !error && <ReadOnlyUrlBox playerNameOne={playerName}/>}
         </>
     );
 }

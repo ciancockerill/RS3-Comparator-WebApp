@@ -1,6 +1,7 @@
 import usePlayerData, {PlayerData} from "../../hooks/usePlayerData.tsx";
 import PlayerInfoWidget from "./PlayerInfoWidget.tsx";
 import {useEffect, useState} from "react";
+import ReadOnlyUrlBox from "../ReadOnlyUrlBox.tsx";
 
 interface PlayerComparisonHandlerProps {
     playerName1: string;
@@ -73,25 +74,34 @@ function PlayerComparisonHandler({ playerName1, playerName2 }: PlayerComparisonH
     }, [playerData1, playerData2])
 
     return (
-        <div className="playerWidgetContainer">
-            <div className="left">
-                {(playerName1) && <PlayerInfoWidget
-                    playerData={playerData1}
-                    loading={loading1}
-                    error={error1}
-                    comparisonData={player1ComparisonData}
-                />}
+        <>
+            <div className="playerWidgetContainer">
+                <div className="left">
+                    {(playerName1) && <PlayerInfoWidget
+                        playerData={playerData1}
+                        loading={loading1}
+                        error={error1}
+                        comparisonData={player1ComparisonData}
+                    />}
+                </div>
+
+                <div className="right">
+                    {(playerName2) && <PlayerInfoWidget
+                        playerData={playerData2}
+                        loading={loading2}
+                        error={error2}
+                        comparisonData={player2ComparisonData}
+                    />}
+                </div>
             </div>
 
-            <div className="right">
-                {(playerName2) && <PlayerInfoWidget
-                    playerData={playerData2}
-                    loading={loading2}
-                    error={error2}
-                    comparisonData={player2ComparisonData}
-                />}
-            </div>
-        </div>
+            {!(loading1 || loading2) && !(error1 || error2) &&
+                <ReadOnlyUrlBox
+                    playerNameOne={playerName1}
+                    playerNameTwo={playerName2}
+                />
+            }
+        </>
     )
 }
 
