@@ -1,10 +1,10 @@
 .searchBoxContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns for the search boxes */
-    gap: 20px; /* Space between the search boxes */
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
     width: 100%;
-    max-width: 1200px; /* Max width to center content on large screens */
-    margin: 0 auto 20px; /* Center the container horizontally and add margin at the bottom */
+    max-width: 1200px;
+    margin: 0 auto 20px;
 }
 
 .searchBoxContainer > * {
