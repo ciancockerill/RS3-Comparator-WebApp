@@ -28,7 +28,7 @@ function usePlayerData(name: string) {
         setLoading(true);
         setError(false);
 
-        fetch('http://rs3comparator-backend-env.eba-icixngap.eu-west-1.elasticbeanstalk.com/rs3player?user=' + name)
+        fetch('https://api.rs3comparator.com/rs3player?user=' + name)
             .then(response => response.json())
             .then(json => {
                 if (json.status !== "error") {
