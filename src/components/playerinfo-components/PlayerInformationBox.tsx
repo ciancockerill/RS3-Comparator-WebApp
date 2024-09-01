@@ -14,11 +14,11 @@ function PlayerInformationBox({name, totalskill, totalxp, completedquests}: Play
             <p className="name">{name}</p>
             <p className="total-skill">
                 <span className="label">Total Skill</span>
-                <span>{" "}{totalskill}</span>
+                <span>{" "}{totalskill.toLocaleString()}</span>
             </p>
             <p className="total-xp">
                 <span className="label">Total XP</span>
-                <span>{" "}{totalxp}</span>
+                <span>{" "}{totalxp.toLocaleString()}</span>
             </p>
             <p className="completed-quests">
                 <span className="label">Completed Quests</span>

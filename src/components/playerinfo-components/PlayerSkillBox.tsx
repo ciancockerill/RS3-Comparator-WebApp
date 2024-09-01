@@ -61,7 +61,7 @@ function PlayerSkillBox({skills, comparisonData} : SkillBoxProps) {
                                      className="skillImageHover"
                                 />
                                 <p className="Pxp" >XP</p>
-                                <p className="xpValue"> {skillData.xp}</p>
+                                <p className="xpValue"> {skillData.xp.toLocaleString()}</p>
                             </div>
                         )}
                     </div>
